@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#container {
+    max-width: 900px;
+    max-height: 900px;
+}
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+}
+
+.square {
+    border: 1px solid black;
+    margin: 3px;
+    flex: 1 1 auto;
+    
+}
+
+/* flex wrap maybe look at flexbox bookmark */
