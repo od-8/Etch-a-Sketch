@@ -6,21 +6,34 @@ body {
     gap: 8px;
 }
 
+.input {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
 #container {
-    max-width: 900px;
-    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 800px;
+    flex-shrink: 0;
 }
 
 .sub-container {
+    flex: 1;
     display: flex;
     justify-content: center;
 }
 
 .square {
     border: 1px solid black;
-    margin: 3px;
+    margin: 1px;
     flex: 1 1 auto;
-    
 }
 
 /* flex wrap maybe look at flexbox bookmark */

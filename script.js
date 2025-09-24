@@ -5,6 +5,28 @@ const size = document.querySelector("#size");
 const sizeButton = document.querySelector("#size-btn");
 sizeButton.addEventListener("click", setUpSketchBoard);
 
+const clearButton = document.querySelector("#clear-btn");
+clearButton.addEventListener("click", clearBoard)
+
+let num = 2
+
+const invisibleButton = document.querySelector("#erase-btn");
+invisibleButton.addEventListener("click", () => {
+    num += 1
+    console.log(num)
+});
+
+// Removes the previous grid and creates a new one
+function clearBoard() {
+    removePreviousContainer()
+
+    if (size.value == "") {
+        createNewGrid(16)
+    } else {
+        createNewGrid(size.value)
+    }
+}
+
 // Creates the new grid if number is legal otherwise sends an alert
 function setUpSketchBoard() {
     let number = parseInt(size.value)
@@ -36,7 +58,11 @@ function createNewGrid(size) {
             square.classList.add("square");
 
             square.addEventListener("mouseover", () => {
-                square.setAttribute("style", `background-color: ${changeColor()};`);
+                if (num % 2 == 0) {
+                    square.setAttribute("style", `background-color: ${changeColor()};`);
+                } else {
+                    square.setAttribute("style", `background-color: white;`);
+                }
             });
 
             subContainer.appendChild(square)
